@@ -1,4 +1,4 @@
-// Task 1 Created Revenue Metric Card
+// Task 1 - Created Revenue Metric Card
 
 const dashboard1 = document.getElementById("dashboard");
 const dashboard2 = document.querySelector("#dashboard");
@@ -23,3 +23,17 @@ metricCardsArray.forEach(card => {
     card.innerHTML += " - Updated";
     card.style.backgroundColor = "cyan"
 });
+
+// Task 3 - Implemented Dynamic Inventory List
+
+const inventoryList = document.getElementById("inventoryList");
+function addInventoryItem(productName) {
+    const li = document.createElement("li");
+    li.setAttribute("class", "product-item");
+    li.setAttribute("data-name", productName);
+    li.onclick = function() {
+        inventoryList.removeChild(li)
+    }
+    li.innerHTML = `${productName}`;
+    inventoryList.appendChild(li);
+}
